@@ -1,0 +1,8 @@
+web/.DS_Store
+webapi/.DS_Store
+.DS_Store
+
+webapi/node_modules
+web/node_modules
+web/dist
+web/src/node_modules

@@ -1,0 +1,9 @@
+{
+    "assistant" : {
+        "url"      : "https://gateway.watsonplatform.net/assistant/api",
+        "username" : "",
+        "password" : "",
+        "version"  : "2018-09-16"
+    },
+    "workspace" : ""
+}
