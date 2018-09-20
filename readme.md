@@ -1,7 +1,7 @@
 # IBM Watson + Node.JS + Vue.JS
 
 ## About Project
-I've built this project to learn a little bit about IBM Watson. It's a simple back-end built in Node.JS + a front-end with a single component (yeah, I should refactory that) built in Vue.JS.
+I've built this project to learn a little bit about IBM Watson. It's a simple back-end built in Node.JS + a front-end with a single component (yeah, I should refactor that) built in Vue.JS.
 
 ## Configuration
 You need to add your keys on the `./webapi/config.json` file.
