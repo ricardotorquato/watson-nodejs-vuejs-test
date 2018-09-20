@@ -1,6 +1,6 @@
 <template>
     <div class="chat">
-        <div class="chatarea" id="chatarea" v-autoscroll="bottom">
+        <div class="chatarea" id="chatarea">
             <div class="chatwindow">
                 <h2 class="chattitle">Chat</h2>
                 <ul>
@@ -24,18 +24,15 @@
 
 <script>
 import axios from 'axios';
-import { autoscroll } from 'vue-autoscroll';
 
 const URL_CHATBOT_API = 'http://localhost:3000/conversation/';
 
 export default {
     data: () => ({
         messages: [],
-        messageToSend: ''
+        messageToSend: '',
+        context: {}
     }),
-    directives: {
-        autoscroll
-    },
     methods: {
         sendMessage() {
             if ( this.messageToSend.trim().length > 0 ) {
@@ -54,9 +51,16 @@ export default {
 
                 this.messageToSend = '';
                 
-                axios.post(URL_CHATBOT_API, { text: newMessage.value })
+                const params = {
+                    text: newMessage.value,
+                    context: this.context
+                };
+
+                axios.post(URL_CHATBOT_API, params)
                      .then(response => {
                          newMessage.messages = [];
+                         
+                         this.context = response.data.context || {};
 
                          response.data.output.text.map( text => {
                              newMessage.messages.push({

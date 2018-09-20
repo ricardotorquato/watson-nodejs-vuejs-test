@@ -6,10 +6,6 @@ services:
     build: ./webapi
     ports:
       - "3000:3000"
-    volumes:
-      - "./todotask.webapi:/usr/src/app"
-    environment:
-      - NODE_ENV=docker
   web:
     container_name: chatbot.web
     build: ./web
